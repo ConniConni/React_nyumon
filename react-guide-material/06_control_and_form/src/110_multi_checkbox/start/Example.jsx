@@ -19,6 +19,14 @@ const Example = () => {
     });
 
     setFruits(newFruits);
+
+    let sumVal = 0;
+    newFruits.forEach((fruit) => {
+      if (fruit.checked) {
+        sumVal += fruit.value;
+      }
+    });
+    setSum(sumVal);
   };
   // const handleChange = () => {
   //   return setSum(
