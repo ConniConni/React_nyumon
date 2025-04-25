@@ -9,7 +9,17 @@ const Example = () => {
   ]);
 
   const [sum, setSum] = useState(0);
-  const handleChange = () => {};
+  const handleChange = (e) => {
+    const newFruits = fruits.map((fruit) => {
+      const newFruit = { ...fruit };
+      if (fruit.label === e.target.value) {
+        fruit.checked = !fruit.checked;
+      }
+      return fruit;
+    });
+
+    setFruits(newFruits);
+  };
   // const handleChange = () => {
   //   return setSum(
   //     fruits.map((fruit) => {
