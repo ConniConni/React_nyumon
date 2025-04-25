@@ -46,7 +46,7 @@ const Example = () => {
           </div>
         );
       })}
-      {"合計：" + sum}
+      <div>合計：{sum}</div>
     </div>
   );
 
