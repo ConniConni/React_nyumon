@@ -9,6 +9,41 @@ const Example = () => {
   ]);
 
   const [sum, setSum] = useState(0);
+  const handleChange = () => {};
+  // const handleChange = () => {
+  //   return setSum(
+  //     fruits.map((fruit) => {
+  //       return sum + fruit.value;
+  //     })
+  //   );
+  // };
+
+  return (
+    <div>
+      {fruits.map((fruit) => {
+        return (
+          <div>
+            <input
+              type="checkbox"
+              value={fruit.label}
+              checked={fruit.checked}
+              onchange={handleChange}
+            />
+            {fruit.label}:{fruit.value}
+          </div>
+        );
+      })}
+      {"合計：" + sum}
+    </div>
+  );
+
+  // return (
+  //   <div>
+  //     {fruits.map((fruit) => {
+  //       return;
+  //     })}
+  //   </div>
+  // );
 
   //   const handleChange = (e) => {
   //     const newFruits = fruits.map((fruit) => {
