@@ -22,14 +22,17 @@ const Example = () => {
     <div>
       {fruits.map((fruit) => {
         return (
-          <div>
+          <div key={fruit.label}>
             <input
+              id={fruit.label}
               type="checkbox"
               value={fruit.label}
               checked={fruit.checked}
-              onchange={handleChange}
+              onChange={handleChange}
             />
-            {fruit.label}:{fruit.value}
+            <label htmlFor={fruit.label}>
+              {fruit.label}:{fruit.value}
+            </label>
           </div>
         );
       })}
