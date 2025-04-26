@@ -9,57 +9,57 @@ const Example = () => {
   ]);
 
   const [sum, setSum] = useState(0);
-  const handleChange = (e) => {
-    const newFruits = fruits.map((fruit) => {
-      const newFruit = { ...fruit };
-      if (fruit.label === e.target.value) {
-        fruit.checked = !fruit.checked;
-      }
-      return fruit;
-    });
+  // const handleChange = (e) => {
+  //   const newFruits = fruits.map((fruit) => {
+  //     const newFruit = { ...fruit };
+  //     if (fruit.label === e.target.value) {
+  //       fruit.checked = !fruit.checked;
+  //     }
+  //     return fruit;
+  //   });
 
-    setFruits(newFruits);
+  //   setFruits(newFruits);
 
-    let sumVal = 0;
-    // newFruits.forEach((fruit) => {
-    //   if (fruit.checked) {
-    //     sumVal += fruit.value;
-    //   }
-    // });
-    newFruits
-      .filter((fruit) => fruit.checked)
-      .forEach((fruit) => (sumVal += fruit.value));
-    setSum(sumVal);
-  };
-  // const handleChange = () => {
-  //   return setSum(
-  //     fruits.map((fruit) => {
-  //       return sum + fruit.value;
-  //     })
-  //   );
+  //   let sumVal = 0;
+  //   // newFruits.forEach((fruit) => {
+  //   //   if (fruit.checked) {
+  //   //     sumVal += fruit.value;
+  //   //   }
+  //   // });
+  //   newFruits
+  //     .filter((fruit) => fruit.checked)
+  //     .forEach((fruit) => (sumVal += fruit.value));
+  //   setSum(sumVal);
   // };
+  // // const handleChange = () => {
+  // //   return setSum(
+  // //     fruits.map((fruit) => {
+  // //       return sum + fruit.value;
+  // //     })
+  // //   );
+  // // };
 
-  return (
-    <div>
-      {fruits.map((fruit) => {
-        return (
-          <div key={fruit.label}>
-            <input
-              id={fruit.label}
-              type="checkbox"
-              value={fruit.label}
-              checked={fruit.checked}
-              onChange={handleChange}
-            />
-            <label htmlFor={fruit.label}>
-              {fruit.label}:{fruit.value}
-            </label>
-          </div>
-        );
-      })}
-      <div>合計：{sum}</div>
-    </div>
-  );
+  // return (
+  //   <div>
+  //     {fruits.map((fruit) => {
+  //       return (
+  //         <div key={fruit.label}>
+  //           <input
+  //             id={fruit.label}
+  //             type="checkbox"
+  //             value={fruit.label}
+  //             checked={fruit.checked}
+  //             onChange={handleChange}
+  //           />
+  //           <label htmlFor={fruit.label}>
+  //             {fruit.label}:{fruit.value}
+  //           </label>
+  //         </div>
+  //       );
+  //     })}
+  //     <div>合計：{sum}</div>
+  //   </div>
+  // );
 
   // return (
   //   <div>
