@@ -17,6 +17,7 @@ const Example = () => {
   ];
 
   const [todos, setTodos] = useState(todosList);
+  const [enterTodo, setEnterTodo] = useState("");
 
   const deleteTodo = (id) => {
     console.log(id);
@@ -28,8 +29,14 @@ const Example = () => {
     setTodos(newTodos);
   };
 
-  const createTodo = (todo) => {
-    setTodos([...todos, todo]);
+  const addTodo = () => {
+    const newTodo = {
+      id: Math.floor(Math.random() * 1e5),
+      content: enterTodo,
+    };
+    setTodos([...todos, newTodo]);
+    setEnterTodo("");
+    console.log(todos);
   };
 
   return (
@@ -51,8 +58,12 @@ const Example = () => {
           );
         })}
       </div>
-      <input type="text" />
-      <button>追加</button>
+      <input
+        type="text"
+        value={enterTodo}
+        onChange={(e) => setEnterTodo(e.target.value)}
+      />
+      <button onClick={addTodo}>追加</button>
     </>
   );
 };
