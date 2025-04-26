@@ -15,20 +15,38 @@ const Example = () => {
       content: "郵便出す",
     },
   ];
-  const [todoList, setTodoList] = useState(todosList);
-  const todoCompletion = () => {};
+
+  const [todos, setTodos] = useState(todosList);
+
+  const deleteTodo = (id) => {
+    console.log(id);
+    // stateの保持するidとクリックしたボタンが保持するidが一致しないものを表示
+    const newTodos = todos.filter((todo) => {
+      return todo.id !== id;
+    });
+
+    setTodos(newTodos);
+  };
+
+  const createTodo = (todo) => {
+    setTodos([...todos, todo]);
+  };
 
   return (
     <>
       <h2>Reminder</h2>
       <div>
-        {todoList.map((list) => {
+        {todos.map((todo) => {
           return (
-            <div key={list.id}>
-              <button id={list.id} value={list.id} onClick={todoCompletion}>
+            <div key={todo.id}>
+              <button
+                id={todo.id}
+                value={todo.id}
+                onClick={() => deleteTodo(todo.id)}
+              >
                 完了
               </button>
-              <label htmlFor={list.id}>{list.content}</label>
+              <label htmlFor={todo.id}>{todo.content}</label>
             </div>
           );
         })}
