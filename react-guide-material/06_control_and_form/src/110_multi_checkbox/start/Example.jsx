@@ -9,6 +9,30 @@ const Example = () => {
   ]);
 
   const [sum, setSum] = useState(0);
+  const handleChange = (e) => {
+    return (checked = !fruits.checked);
+  };
+
+  return (
+    <div>
+      {fruits.map((fruit) => {
+        return (
+          <div key={fruit.label}>
+            <input type="checkbox" value={fruit.label} />
+            <label
+              htmlFor={fruit.label}
+              value={fruit.label}
+              checked={fruit.checked}
+              onChange={handleChange}
+            >
+              {fruit.label}:{fruit.value}
+            </label>
+          </div>
+        );
+      })}
+      <div>合計：{sum}</div>
+    </div>
+  );
   // const handleChange = (e) => {
   //   const newFruits = fruits.map((fruit) => {
   //     const newFruit = { ...fruit };
