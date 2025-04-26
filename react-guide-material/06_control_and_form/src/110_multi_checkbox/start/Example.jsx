@@ -2,12 +2,12 @@ import { useState } from "react";
 
 // POINT 複数チェックボックスの実装
 const Example = () => {
-  const [sum, setSum] = useState(0);
   const [fruits, setFruits] = useState([
     { label: "Apple", value: 100, checked: false },
     { label: "Banana", value: 200, checked: false },
     { label: "Cherry", value: 300, checked: false },
   ]);
+  const [sum, setSum] = useState(0);
 
   const handleChange = (e) => {
     //チェックボックスが変わったときに呼び出されるコールバック関数
@@ -21,8 +21,15 @@ const Example = () => {
       return newFruit; // newFruitを返す
     });
     setFruits(newFruits); //newFruitでfruitsを更新
-  };
 
+    let sumVal = 0;
+    newFruits.forEach((fruit) => {
+      if (fruit.checked) {
+        sumVal += fruit.value;
+      }
+    });
+    setSum(sumVal);
+  };
   return (
     <div>
       {fruits.map((fruit) => {
