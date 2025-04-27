@@ -15,3 +15,8 @@ const fn = function (number) {
 const fnArrow2 = (number) => {
   return number * 2;
 };
+
+//引数の一つの時は()が省略可能
+const fnArrow1 = (number) => {
+  return number * 2;
+};
