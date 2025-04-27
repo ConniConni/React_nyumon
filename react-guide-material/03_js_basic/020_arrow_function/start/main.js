@@ -20,3 +20,6 @@ const fnArrow2 = (number) => {
 const fnArrow1 = (number) => {
   return number * 2;
 };
+
+//本文が１行の場合、{}とreturnを省略できる
+const fnArrow3 = () => number * 2;
