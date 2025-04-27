@@ -9,10 +9,14 @@ const Todo = () => {
     { id: 3, content: "郵便出す" },
   ];
   const [todoList, setTodoList] = useState(todosList);
+  const createdTodo = (todo) => {
+    const newTodoList = [...todoList, todo];
+    return setTodoList(newTodoList);
+  };
   return (
     <div>
       <List todoList={todoList} />
-      <Form />
+      <Form createdTodo={createdTodo} />
     </div>
   );
 };

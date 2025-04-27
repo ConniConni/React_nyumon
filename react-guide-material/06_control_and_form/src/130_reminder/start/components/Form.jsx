@@ -1,7 +1,14 @@
 import { useState } from "react";
 
-const Form = () => {
+const Form = ({ createdTodo }) => {
   const [enteredTodo, setEnteredTodo] = useState("");
+  const addTodo = () => {
+    const newTodo = {
+      id: Math.floor(Math.random() * 1e5),
+      content: enteredTodo,
+    };
+    createdTodo(newTodo);
+  };
   return (
     <div>
       <input
@@ -9,7 +16,7 @@ const Form = () => {
         value={enteredTodo}
         onChange={(e) => setEnteredTodo(e.target.value)}
       />
-      <button>追加</button>
+      <button onClick={addTodo}>追加</button>
     </div>
   );
 };
