@@ -1,5 +1,6 @@
 import { useState } from "react";
 import List from "./List";
+import Form from "./Form";
 
 const Todo = () => {
   const todosList = [
@@ -8,9 +9,11 @@ const Todo = () => {
     { id: 3, content: "郵便出す" },
   ];
   const [todoList, setTodosList] = useState(todosList);
+  const [inputTodo, setInputTodo] = useState("");
   return (
     <>
       <List todoList={todoList} />
+      <Form inputTodo={inputTodo} setInputTodo={setInputTodo} />
     </>
   );
 };

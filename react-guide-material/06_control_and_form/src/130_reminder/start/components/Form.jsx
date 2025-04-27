@@ -1,3 +1,18 @@
+const Form = ({ inputTodo, setInputTodo }) => {
+  return (
+    <div>
+      <input
+        type="text"
+        value={inputTodo}
+        onChange={(e) => setInputTodo(e.target.value)}
+      />
+      <button>追加</button>
+      <span>{inputTodo}</span>
+    </div>
+  );
+};
+export default Form;
+
 // import { useState } from "react";
 // const Form = ({ createTodo }) => {
 //   const [enterTodo, setEnterTodo] = useState("");
