@@ -1,5 +1,6 @@
 import { useState } from "react";
 import List from "./List";
+import Form from "./Form";
 
 const Todo = () => {
   const todosList = [
@@ -11,6 +12,7 @@ const Todo = () => {
   return (
     <div>
       <List todoList={todoList} />
+      <Form />
     </div>
   );
 };
