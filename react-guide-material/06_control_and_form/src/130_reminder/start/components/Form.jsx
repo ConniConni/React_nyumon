@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Form = ({ todoList, createdTodo }) => {
+const Form = ({ createdTodo }) => {
   const [enteredTodo, setEnteredTodo] = useState("");
   const addTodo = () => {
     const newTodo = {
@@ -8,6 +8,7 @@ const Form = ({ todoList, createdTodo }) => {
       content: enteredTodo,
     };
     createdTodo(newTodo);
+    setEnteredTodo("");
   };
   return (
     <div>

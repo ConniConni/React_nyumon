@@ -9,11 +9,7 @@ const List = ({ todoList, deleteTodo }) => {
         console.log(todo);
         return (
           <div key={todo.id}>
-            <button
-              id={todo.id}
-              value={todo.id}
-              onClick={() => complete(todo.id)}
-            >
+            <button id={todo.id} onClick={() => complete(todo.id)}>
               完了
             </button>
             <label htmlFor={todo.id}>{todo.content}</label>
