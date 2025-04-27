@@ -11,7 +11,6 @@ const Todo = () => {
   const [todoList, setTodoList] = useState(todosList);
   const deleteTodo = (id) => {
     const newTodoList = todoList.filter((todo) => {
-      console.log(todo.id);
       return todo.id !== id;
     });
     setTodoList(newTodoList);
