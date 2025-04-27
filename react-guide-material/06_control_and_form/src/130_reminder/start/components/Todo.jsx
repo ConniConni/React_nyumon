@@ -13,17 +13,22 @@ const Todo = () => {
 
   const deleteTodo = (id) => {
     const newTodo = todoList.filter((todos) => {
-      console.log(todos.id);
       return todos.id !== id;
     });
 
     setTodosList(newTodo);
   };
 
+  const createTodo = (todo) => setTodosList([...todoList, todo]);
+
   return (
     <>
       <List todoList={todoList} deleteTodo={deleteTodo} />
-      <Form inputTodo={inputTodo} setInputTodo={setInputTodo} />
+      <Form
+        inputTodo={inputTodo}
+        setInputTodo={setInputTodo}
+        createTodo={createTodo}
+      />
     </>
   );
 };

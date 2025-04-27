@@ -1,4 +1,13 @@
-const Form = ({ inputTodo, setInputTodo }) => {
+const Form = ({ inputTodo, setInputTodo, createTodo }) => {
+  const addTodo = () => {
+    const newTodo = {
+      id: Math.floor(Math.random() * 1e5),
+      content: inputTodo,
+    };
+    createTodo(newTodo);
+
+    setInputTodo("");
+  };
   return (
     <div>
       <input
@@ -6,8 +15,7 @@ const Form = ({ inputTodo, setInputTodo }) => {
         value={inputTodo}
         onChange={(e) => setInputTodo(e.target.value)}
       />
-      <button>追加</button>
-      <span>{inputTodo}</span>
+      <button onClick={addTodo}>追加</button>
     </div>
   );
 };
