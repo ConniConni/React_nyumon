@@ -10,3 +10,8 @@ const fnArrow = (number) => {
 const fn = function (number) {
   return number * 2;
 };
+
+//無名関数の function を取り除き、 => を加えるとアロー関数になる
+const fnArrow2 = (number) => {
+  return number * 2;
+};
