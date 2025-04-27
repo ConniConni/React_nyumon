@@ -1,7 +1,6 @@
 function fn(number) {
   return number * 2;
 }
-
 //アロー関数
 const fnArrow = (number) => {
   return number * 2;
@@ -13,7 +12,7 @@ const fn = function (number) {
 };
 
 //無名関数の function を取り除き、 => を加えるとアロー関数になる
-const fn = (number) => {
+const fnArrow2 = (number) => {
   return number * 2;
 };
 
@@ -23,7 +22,4 @@ const fnArrow1 = (number) => {
 };
 
 //本文が１行の場合、{}とreturnを省略できる
-const fnArrow2 = () => number * 2;
-
-//戻り値がobjectの時
-const fnArrowObj = (number) => ({ result: number * 2 });
+const fnArrow3 = () => number * 2;
