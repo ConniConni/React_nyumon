@@ -10,9 +10,19 @@ const Todo = () => {
   ];
   const [todoList, setTodosList] = useState(todosList);
   const [inputTodo, setInputTodo] = useState("");
+
+  const deleteTodo = (id) => {
+    const newTodo = todoList.filter((todos) => {
+      console.log(todos.id);
+      return todos.id !== id;
+    });
+
+    setTodosList(newTodo);
+  };
+
   return (
     <>
-      <List todoList={todoList} />
+      <List todoList={todoList} deleteTodo={deleteTodo} />
       <Form inputTodo={inputTodo} setInputTodo={setInputTodo} />
     </>
   );
