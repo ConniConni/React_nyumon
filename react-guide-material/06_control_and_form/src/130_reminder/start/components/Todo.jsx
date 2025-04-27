@@ -1,3 +1,27 @@
+import { useState } from "react";
+
+const Todo = () => {
+  const todosList = [
+    { id: 1, content: "店予約する" },
+    { id: 2, content: "卵買う" },
+    { id: 3, content: "郵便出す" },
+  ];
+  const [todoList, setTodoList] = useState(todosList);
+  return (
+    <div>
+      {todoList.map((todo) => {
+        return (
+          <div>
+            <button>完了</button>
+            <label htmlFor={todo.id}>{todo.content}</label>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+export default Todo;
+
 // import { useState } from "react";
 // import List from "./List";
 // import Form from "./Form";
