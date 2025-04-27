@@ -9,14 +9,21 @@ const Todo = () => {
     { id: 3, content: "郵便出す" },
   ];
   const [todoList, setTodoList] = useState(todosList);
+  const deleteTodo = (id) => {
+    const newTodoList = todoList.filter((todo) => {
+      console.log(todo.id);
+      return todo.id !== id;
+    });
+    setTodoList(newTodoList);
+  };
   const createdTodo = (todo) => {
     const newTodoList = [...todoList, todo];
     return setTodoList(newTodoList);
   };
   return (
     <div>
-      <List todoList={todoList} />
-      <Form createdTodo={createdTodo} />
+      <List todoList={todoList} deleteTodo={deleteTodo} />
+      <Form todoList={todoList} createdTodo={createdTodo} />
     </div>
   );
 };

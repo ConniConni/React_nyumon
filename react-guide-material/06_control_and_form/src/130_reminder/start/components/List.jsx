@@ -1,10 +1,21 @@
-const List = ({ todoList }) => {
+const List = ({ todoList, deleteTodo }) => {
+  const complete = (id) => {
+    return deleteTodo(id);
+  };
+
   return (
     <div>
       {todoList.map((todo) => {
+        console.log(todo);
         return (
           <div key={todo.id}>
-            <button>完了</button>
+            <button
+              id={todo.id}
+              value={todo.id}
+              onClick={() => complete(todo.id)}
+            >
+              完了
+            </button>
             <label htmlFor={todo.id}>{todo.content}</label>
           </div>
         );
