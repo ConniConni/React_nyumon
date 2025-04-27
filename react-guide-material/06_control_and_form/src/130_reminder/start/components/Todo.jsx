@@ -1,4 +1,5 @@
 import { useState } from "react";
+import List from "./List";
 
 const Todo = () => {
   const todosList = [
@@ -9,14 +10,7 @@ const Todo = () => {
   const [todoList, setTodoList] = useState(todosList);
   return (
     <div>
-      {todoList.map((todo) => {
-        return (
-          <div>
-            <button>完了</button>
-            <label htmlFor={todo.id}>{todo.content}</label>
-          </div>
-        );
-      })}
+      <List todoList={todoList} />
     </div>
   );
 };
