@@ -1,3 +1,8 @@
+const Example = () => {
+  return <h2>Reminder</h2>;
+};
+export default Example;
+
 // import Todo from "./components/Todo";
 
 // const Example = () => {
