@@ -22,7 +22,7 @@ const Todo = () => {
   return (
     <div>
       <List todoList={todoList} deleteTodo={deleteTodo} />
-      <Form todoList={todoList} createdTodo={createdTodo} />
+      <Form createdTodo={createdTodo} />
     </div>
   );
 };
