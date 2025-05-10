@@ -1,3 +1,13 @@
+const From = () => {
+  return (
+    <div>
+      <input type="text" />
+      <button>追加</button>
+    </div>
+  );
+};
+export default From;
+
 // import { useState } from "react";
 
 // const Form = ({ createdTodo }) => {

@@ -1,7 +1,13 @@
 import List from "./List";
+import From from "./Form";
 
 const Todo = () => {
-  return <List />;
+  return (
+    <div>
+      <List />
+      <From />
+    </div>
+  );
 };
 export default Todo;
 
