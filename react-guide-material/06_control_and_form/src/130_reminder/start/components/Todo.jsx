@@ -9,9 +9,15 @@ const Todo = () => {
     { id: 3, content: "郵便出す" },
   ];
   const [todosList, setTodosList] = useState(todoList);
+  const deleteTodo = (id) => {
+    const newTodosList = todoList.filter((todo) => {
+      return todo.id != id;
+    });
+    setTodosList(newTodosList);
+  };
   return (
     <div>
-      <List todosList={todosList} />
+      <List todosList={todosList} deleteTodo={deleteTodo} />
       <From />
     </div>
   );

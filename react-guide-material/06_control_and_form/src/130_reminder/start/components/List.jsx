@@ -1,10 +1,13 @@
-const List = ({ todosList }) => {
+const List = ({ todosList, deleteTodo }) => {
+  const complete = (id) => {
+    return deleteTodo(id);
+  };
   return (
     <div>
       {todosList.map((todo) => {
         return (
           <div key={todo.id}>
-            <button>完了</button>
+            <button onClick={() => complete(todo.id)}>完了</button>
             <span>{todo.content}</span>
           </div>
         );
