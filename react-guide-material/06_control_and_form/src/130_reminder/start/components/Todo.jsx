@@ -10,15 +10,18 @@ const Todo = () => {
   ];
   const [todosList, setTodosList] = useState(todoList);
   const deleteTodo = (id) => {
-    const newTodosList = todoList.filter((todo) => {
+    const newTodosList = todosList.filter((todo) => {
       return todo.id != id;
     });
     setTodosList(newTodosList);
   };
+  const createTodo = (todo) => {
+    setTodosList([...todosList, todo]);
+  };
   return (
     <div>
       <List todosList={todosList} deleteTodo={deleteTodo} />
-      <From />
+      <From createTodo={createTodo} />
     </div>
   );
 };

@@ -1,8 +1,23 @@
-const From = () => {
+import { useState } from "react";
+
+const From = ({ createTodo }) => {
+  const [enterTodo, setEnteredTodo] = useState("");
+  const addTodo = () => {
+    const newTodo = {
+      id: Math.floor(Math.random() * 1e5),
+      content: enterTodo,
+    };
+    createTodo(newTodo);
+    setEnteredTodo("");
+  };
   return (
     <div>
-      <input type="text" />
-      <button>追加</button>
+      <input
+        type="text"
+        value={enterTodo}
+        onChange={(e) => setEnteredTodo(e.target.value)}
+      />
+      <button onClick={addTodo}>追加</button>
     </div>
   );
 };
