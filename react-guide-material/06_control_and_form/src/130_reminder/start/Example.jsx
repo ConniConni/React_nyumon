@@ -9,26 +9,38 @@ const Example = () => {
   );
 };
 export default Example;
+
 // import Todo from "./components/Todo";
+
 // const Example = () => {
 //   return (
-//     <>
-//       <h2>Remainder</h2>
+//     <div>
+//       <h2>Reminder</h2>
 //       <Todo />
-//     </>
+//     </div>
 //   );
 // };
 // export default Example;
-
 // // import Todo from "./components/Todo";
-
 // // const Example = () => {
 // //   return (
 // //     <>
-// //       <h2>Reminder</h2>
+// //       <h2>Remainder</h2>
 // //       <Todo />
 // //     </>
 // //   );
 // // };
-
 // // export default Example;
+
+// // // import Todo from "./components/Todo";
+
+// // // const Example = () => {
+// // //   return (
+// // //     <>
+// // //       <h2>Reminder</h2>
+// // //       <Todo />
+// // //     </>
+// // //   );
+// // // };
+
+// // // export default Example;
