@@ -1,3 +1,13 @@
+const List = () => {
+  return (
+    <div>
+      <button>完了</button>
+      <p>店予約</p>
+    </div>
+  );
+};
+export default List;
+
 // const List = ({ todoList, deleteTodo }) => {
 //   const complete = (id) => {
 //     return deleteTodo(id);

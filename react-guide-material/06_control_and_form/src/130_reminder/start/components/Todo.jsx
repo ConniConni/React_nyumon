@@ -1,10 +1,7 @@
+import List from "./List";
+
 const Todo = () => {
-  return (
-    <div>
-      <button>完了</button>
-      <p>店予約</p>
-    </div>
-  );
+  return <List />;
 };
 export default Todo;
 
