@@ -1,3 +1,13 @@
+const Todo = () => {
+  return (
+    <div>
+      <button>完了</button>
+      <p>店予約</p>
+    </div>
+  );
+};
+export default Todo;
+
 // import { useState } from "react";
 // import List from "./List";
 // import Form from "./Form";
