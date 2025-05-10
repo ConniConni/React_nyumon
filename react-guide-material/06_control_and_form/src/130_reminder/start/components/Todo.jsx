@@ -1,10 +1,17 @@
 import List from "./List";
 import From from "./Form";
+import { useState } from "react";
 
 const Todo = () => {
+  const todoList = [
+    { id: 1, content: "店予約する" },
+    { id: 2, content: "卵買う" },
+    { id: 3, content: "郵便出す" },
+  ];
+  const [todosList, setTodosList] = useState(todoList);
   return (
     <div>
-      <List />
+      <List todosList={todosList} />
       <From />
     </div>
   );

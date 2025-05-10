@@ -1,8 +1,14 @@
-const List = () => {
+const List = ({ todosList }) => {
   return (
     <div>
-      <button>完了</button>
-      <p>店予約</p>
+      {todosList.map((todo) => {
+        return (
+          <div key={todo.id}>
+            <button>完了</button>
+            <span>{todo.content}</span>
+          </div>
+        );
+      })}
     </div>
   );
 };
