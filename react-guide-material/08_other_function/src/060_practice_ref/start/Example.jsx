@@ -1,10 +1,20 @@
 import { useState, useRef, forwardRef, useImperativeHandle } from "react";
 
 const Video = forwardRef(({ path }, ref) => {
-  useImperativeHandle(ref, () => ({}));
+  const videoRef = useRef();
+  useImperativeHandle(ref, () => ({
+    Play() {
+      videoRef.current.play();
+      console.log("play");
+    },
+    Stop() {
+      videoRef.current.pause();
+      console.log("stop");
+    },
+  }));
 
   return (
-    <video style={{ maxWidth: "100%" }}>
+    <video style={{ maxWidth: "100%" }} ref={videoRef}>
       <source src={path}></source>
     </video>
   );
@@ -24,6 +34,11 @@ const Example = () => {
       <Video ref={ref} path="./sample.mp4" />
       <button
         onClick={() => {
+          if (playing) {
+            ref.current.Stop();
+          } else {
+            ref.current.Play();
+          }
           setPlaying((prev) => !prev);
         }}
       >
