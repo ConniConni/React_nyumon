@@ -20,10 +20,38 @@ const Case1 = () => {
   );
 };
 
+const Case2 = () => {
+  const [playing, setPlaying] = useState(false);
+  const videoRef = useRef();
+  return (
+    <div>
+      <h3>ユースケース２</h3>
+      <video
+        style={{ maxWidth: "100%" }}
+        ref={videoRef}
+        src="./sample.mp4"
+      ></video>
+      <button
+        onClick={() => {
+          if (playing) {
+            videoRef.current.pause();
+          } else {
+            videoRef.current.play();
+          }
+          setPlaying((prev) => !prev);
+        }}
+      >
+        {playing ? "stop" : "play"}
+      </button>
+    </div>
+  );
+};
+
 const Example = () => {
   return (
     <>
       <Case1 />
+      <Case2 />
     </>
   );
 };
